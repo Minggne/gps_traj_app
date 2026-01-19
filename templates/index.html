@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>GPS Trajectory Planner</title>
+    <link rel="stylesheet"
+          href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+    <style>
+        #map { height: 100vh; }
+        .panel {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: white;
+            padding: 10px;
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body>
+
+<div class="panel">
+  <button onclick="setOrigin()">Set Origin</button>
+  <button onclick="exportData()">Refresh Table</button>
+  <button onclick="downloadJSON()">Download JSON</button>
+  <p id="status"></p>
+
+  <table border="1" style="margin-top:10px; font-size:12px;">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Lat</th>
+        <th>Lon</th>
+        <th>E (m)</th>
+        <th>N (m)</th>
+        <th>U (m)</th>
+      </tr>
+    </thead>
+    <tbody id="table-body"></tbody>
+  </table>
+</div>
+
+
+<div id="map"></div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="/static/script.js"></script>
+
+</body>
+</html>
