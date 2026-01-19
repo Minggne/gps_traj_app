@@ -84,5 +84,18 @@ def download():
         mimetype="application/json"
     )
 
+@app.route("/clear", methods=["POST"])
+def clear():
+    global trajectory
+    trajectory = []
+    return jsonify({"status": "cleared"})
+
+@app.route("/undo", methods=["POST"])
+def undo():
+    global trajectory
+    if trajectory:
+        trajectory.pop()
+    return jsonify({"status": "undone", "length": len(trajectory)})
+
 if __name__ == "__main__":
     app.run(debug=True)

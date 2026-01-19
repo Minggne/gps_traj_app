@@ -23,22 +23,27 @@
   <button onclick="setOrigin()">Set Origin</button>
   <button onclick="exportData()">Refresh Table</button>
   <button onclick="downloadJSON()">Download JSON</button>
+  <button onclick="undoPoint()">Undo Last Point</button>
+  <button onclick="clearTrajectory()">Clear Trajectory</button>
   <p id="status"></p>
 
   <table border="1" style="margin-top:10px; font-size:12px;">
     <thead>
-      <tr>
-        <th>#</th>
-        <th>Lat</th>
-        <th>Lon</th>
-        <th>E (m)</th>
-        <th>N (m)</th>
-        <th>U (m)</th>
-      </tr>
+        <tr>
+            <th>#</th>
+            <th>Lat</th>
+            <th>Lon</th>
+            <th>E (m)</th>
+            <th>N (m)</th>
+            <th>U (m)</th>
+            <th>Dist (m)</th>
+            <th>Heading (deg)</th>
+        </tr>
     </thead>
     <tbody id="table-body"></tbody>
   </table>
 </div>
+
 
 
 <div id="map"></div>
